@@ -3,7 +3,7 @@ package com.codecool;
 public class BigO{
 
 
-    //COMPLEXITY: (O)1  -> only (O)1  exists any given time
+    //COMPLEXITY: O(1)  -> only O(1)  exists any given time
                            //calls are not called simultaneusly, only 1 at the time
     public int pairSumSequence(int n){
         int sum = 0;
@@ -18,7 +18,7 @@ public class BigO{
     }
 
     //RECURSIVE RUNTIME///////////////////
-    //COMPLEXITY: (O)n  -> only (O)n exists any given time
+    //COMPLEXITY: O(n)   -> only (O)n exists any given time
     public int f(int n){
         if(n<=1){
             //System.out.println("return 1");
@@ -30,7 +30,7 @@ public class BigO{
 
 
 
-    //COMPLEXITY: (O)n    iterating trough twice doesnt matter
+    //COMPLEXITY: O(n)    iterating trough twice doesnt matter
     public void foo(int[] array){
         int sum = 0;
         int product = 1;
@@ -59,15 +59,25 @@ public class BigO{
         }
     }
 
-
+    //COMPLEXITY: O(n^2)      long explanation in Book, page 46,47
     public void printUnorderedPairs(int[] array){
-        for (int i = 0; i < array.length; i++) {
-            for (int j = i+1; j < array.length; j++) {
+        for (int i = 0; i < array.length; i++) { // 4X
+            for (int j = i+1; j < array.length; j++) { // 1: 2X, 2:3X, 3:4X, 4:5X
                 System.out.println(array[i] + "," + array[j]);
             }
         }
     }
 
+    //COMPLEXITY: O(ab)    -> two different inputs
+    // O(n^2) is a VERY COMMON MISTAKE here, the input matters very much
+    //explanation on page 48
+    public void printUnorderedPairs2(int[] arrayA, int[] arrayB){
+        for (int i = 0; i < arrayA.length; i++) { // 4X
+            for (int j = 0; j < arrayB.length; j++) { // 1: 2X, 2:3X, 3:4X, 4:5X
+                System.out.println(arrayA[i] + "," + arrayB[j]);
+            }
+        }
+    }
 
 
 
