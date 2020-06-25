@@ -2,6 +2,8 @@ package com.codecool;
 
 import org.w3c.dom.Node;
 
+import static java.util.Arrays.binarySearch;
+
 public class BigO{
 
 
@@ -413,6 +415,25 @@ public class BigO{
             }
         }
         return true;
+    }
+
+
+    //12
+    // COMPLEXITY: O(b log b + a log b)
+    //explanation:
+    /*
+    First,we have to sort array b,which takesO(b log b) time.Then,for each
+    element in a, we do binary search in 0( log b) time. The second part takes O(a log b) time.
+     */
+    int intersection(int[] a, int[] b) {
+        //mergesort(b);
+        int intersect = 0;
+        for (int x : a) {
+            if (binarySearch(b, x) >= 0) {
+                intersect++;
+            }
+        }
+        return intersect;
     }
 
 
