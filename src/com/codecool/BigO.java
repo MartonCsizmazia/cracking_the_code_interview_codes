@@ -173,9 +173,8 @@ public class BigO{
 
 
 
-
-
-    //Example 11
+    // Example 11
+    // COMPLEXITY:O(n)
     public int factorial(int n){
         if(n<0){
             return -1;
@@ -190,6 +189,7 @@ public class BigO{
 
 
     //Example 12
+    // COMPLEXITY:O(n!)
     public void permutation(String str){
         permutation(str, "");
     }
@@ -204,6 +204,29 @@ public class BigO{
             }
         }
     }
+
+
+    //Example 13
+    // COMPLEXITY:O(n!)
+    public int fib(int n) {
+        if(n <= 0) return 0;
+        else if (n == 1) return 1;
+        return fib(n-1) + fib(n-2);
+    }
+
+
+    public void allFib(int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.println(i + ": " + fib2(i));
+        }
+    }
+
+    int fib2(int n) {
+        if (n <= 0) return 0;
+        else if (n == 1) return 1;
+        return fib2(n - 1) + fib2(n - 2);
+    }
+
 
 
 
