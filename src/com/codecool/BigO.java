@@ -337,6 +337,89 @@ public class BigO{
     }
 
 
+    //9.
+    // COMPLEXITY: O(suare root n)
+
+    int[] copyArray(int[] array) {
+        int[] copy = new int[0];
+        for (int value : array) {
+            copy = appendToNew(copy, value);
+        }
+
+        return copy;
+    }
+    int[] appendToNew(int[] array, int value) {
+        // copy all elements over to new array
+        int[] bigger = new int[array.length + 1];
+        for (int i = 0; i < array.length; i++) {
+            bigger[i] = array[i];
+        }
+
+        // add new element
+        bigger[bigger.length - 1] = value;
+        return bigger;
+    }
+
+
+    //10.
+    // COMPLEXITY: O(suare root n)
+
+    int sumDigits(int n) {
+        int sum = 0;
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
+
+
+    //11
+    // COMPLEXITY: O(k*c^k)
+    // EXPLANATION :
+    /*
+        0( kc^k ), where k is the length of the string and c is the number of characters in the alphabet. It takes
+        0( ck ) time to generate each string. Then, we need to check that each of these is sorted, which takes
+        O( k  ) time.
+     */
+    int numChars = 26;
+    void printSortedStrings(int remaining) {
+        printSortedStrings(remaining, "");
+    }
+
+    void printSortedStrings(int remaining, String prefix) {
+        if (remaining == 0) {
+            if (isinOrder(prefix)) {
+                System.out.println(prefix);
+            } else {
+                for (int i = 0; i < numChars; i++) {
+                    char c = ithLetter(i);
+                    printSortedStrings(remaining - 1, prefix + c);
+                }
+            }
+        }
+    }
+
+    private char ithLetter(int i) {
+        return (char) (((int) 'a') + i);
+    }
+
+    boolean isinOrder (String s){
+        for (int i = 1; i < s.length(); i++) {
+            int prev = ithLetter(s.charAt(i - 1));
+            int curr = ithLetter(s.charAt(i));
+            if (prev > curr) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
+
+
+
 
 
 
