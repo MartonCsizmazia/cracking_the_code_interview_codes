@@ -297,6 +297,44 @@ public class BigO{
         return count;
     }
 
+    //4.
+    // COMPLEXITY: O(a/b)
+    int div2(int a, int b) {
+        int count = 0;
+        int sum = b;
+        while (sum <= a) {
+            sum += b;
+            count++;
+        }
+        return count;
+    }
+    //5.
+    // COMPLEXITY: O(log n)
+    int sqrt(int n) {
+        return sqrt_helper(n, 1, n);
+    }
+    int sqrt_helper(int n, int min, int max) {
+        if (max < min) return -1; // no square root
+        int guess = (min + max) / 2;
+        if (guess *guess == n) { // found it!
+            return guess;
+        } else if (guess * guess < n) { // too low
+            return sqrt_helper(n, guess + 1, max); // try higher
+        } else { // too high
+            return sqrt_helper(n, min, guess - 1); // try lower
+        }
+    }
+
+    //6.
+    // COMPLEXITY: O(suare root n)
+    int sqrt2(int n) {
+        for (int guess = 1; guess * guess <= n; guess++) {
+            if (guess * guess == n) {
+                return guess;
+            }
+        }
+        return -1;
+    }
 
 
 
