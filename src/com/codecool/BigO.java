@@ -171,6 +171,10 @@ public class BigO{
         return true;
     }
 
+
+
+
+
     //Example 11
     public int factorial(int n){
         if(n<0){
@@ -182,6 +186,24 @@ public class BigO{
         }
     }
 
+
+
+
+    //Example 12
+    public void permutation(String str){
+        permutation(str, "");
+    }
+
+    public void permutation(String str, String prefix){
+        if(str.length() == 0) {
+            System.out.println(prefix);
+        } else {
+            for (int i = 0; i < str.length(); i++) {
+                String rem = str.substring(0,i) + str.substring(i+1);
+                permutation(rem, prefix + str.charAt(i));
+            }
+        }
+    }
 
 
 
