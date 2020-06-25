@@ -222,7 +222,7 @@ public class BigO{
         }
     }
 
-    int fib2(int n) {
+    public int fib2(int n) {
         if (n <= 0) return 0;
         else if (n == 1) return 1;
         return fib2(n - 1) + fib2(n - 2);
@@ -237,13 +237,31 @@ public class BigO{
         }
     }
 
-    int fib3(int n, int[] memo) {
+    public int fib3(int n, int[] memo) {
         if (n <= 0)return 0;
         else if (n == 1) return 1;
         else if (memo[n] > 0) return memo[n];
         memo[n] = fib3(n - 1, memo) + fib3(n - 2, memo);
         return memo[n];
     }
+
+    //Example 16
+    // COMPLEXITY:O(log n)
+    public int powers0f2(int n) {
+        if (n < 1) {
+            return 0;
+        } else if (n == 1) {
+            System.out.println(1);
+            return 1;
+        } else {
+            int prev = powers0f2(n / 2);
+            int curr = prev * 2;
+            System.out.println(curr);
+            return curr;
+        }
+    }
+
+
 
 
 
