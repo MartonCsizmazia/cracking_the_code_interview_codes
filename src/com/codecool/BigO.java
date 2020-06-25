@@ -261,6 +261,44 @@ public class BigO{
         }
     }
 
+    ////ADDITIONAL PROBLEMS////////////////////////////////////////////////////
+    //1.
+    // COMPLEXITY: O(b)
+    int product(int a, int b) {
+        int sum = 0;
+        for (int i= 0; i < b; i++) {
+            sum += a;
+        }
+        return sum;
+    }
+
+
+    //2.
+    // COMPLEXITY: O(b)
+    int power(int a, int b) {
+        if (b < 0) {
+            return 0; // error
+        } else if (b == 0) {
+            return 1;
+        } else {
+            return a * power(a, b - 1);
+        }
+    }
+
+    //3.
+    // COMPLEXITY: O(1)
+    int div(int a, int b) {
+        int count = 0;
+        int sum = b;
+        while (sum <= a) {
+            sum += b;
+            count++;
+        }
+        return count;
+    }
+
+
+
 
 
 
