@@ -1,5 +1,7 @@
 package com.codecool;
 
+import org.w3c.dom.Node;
+
 public class BigO{
 
 
@@ -138,10 +140,18 @@ public class BigO{
 
     adding up = O(a*s(log a + log s))
 
-
-
-
      */
+
+
+    // Example 9
+    //COMPLEXITY: O(n)  the code touches each node in the tree once, therefore O(n)
+    public int sum(Node node){
+        if(node == null){
+            return 0;
+        }
+        //return sum(node.left) + node.value + sum(node.right);
+        return 0;
+    }
 
 
 
