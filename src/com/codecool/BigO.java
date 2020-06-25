@@ -94,6 +94,7 @@ public class BigO{
         }
     }
 
+    //Example 6
     //COMPLEXITY: O(n)  -> the time the algorithm runs, it doesnt matter if only half the lenght
     public void reverse (int[] array){
         for (int i = 0; i < array.length / 2; i++) {
@@ -103,6 +104,20 @@ public class BigO{
             array[other] = temp;
         }
     }
+
+
+    //Example 7
+    /*
+    What is equivalent to O(n)?
+    good answers:
+
+    -O(N+P)  P < N/2
+    -O(2N)
+    -O(N +logN)
+
+    n dominates in all the above
+     */
+
 
 
 
