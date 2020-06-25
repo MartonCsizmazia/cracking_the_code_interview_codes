@@ -17,8 +17,7 @@ public class BigO{
         return a+b;
     }
 
-
-
+    //RECURSIVE RUNTIME///////////////////
     //COMPLEXITY: (O)n  -> only (O)n exists any given time
     public int f(int n){
         if(n<=1){
@@ -28,5 +27,27 @@ public class BigO{
         //System.out.println("return (n-1)*2");
         return f(n-1)+f(n-1);
     }
+
+
+
+    //COMPLEXITY: (O)n    iterating trough twice doesnt matter
+    public void foo(int[] array){
+        int sum = 0;
+        int product = 1;
+        /*enchanced below
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+         */
+        for (int value : array) {
+            sum += value;
+        }
+        for (int i = 0; i < array.length; i++) {
+            product *= array[i];
+        }
+        System.out.println(sum + ", " + product);
+    }
+
+
 
 }
