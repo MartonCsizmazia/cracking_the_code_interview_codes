@@ -214,7 +214,8 @@ public class BigO{
         return fib(n-1) + fib(n-2);
     }
 
-
+    //Example 14
+    // COMPLEXITY:O(2^n)
     public void allFib(int n) {
         for (int i = 0; i < n; i++) {
             System.out.println(i + ": " + fib2(i));
@@ -225,6 +226,23 @@ public class BigO{
         if (n <= 0) return 0;
         else if (n == 1) return 1;
         return fib2(n - 1) + fib2(n - 2);
+    }
+
+    //Example 15
+    // COMPLEXITY:O(n)
+    void allFib2(int n) {
+        int[] memo = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            System.out.println(i + ": " + fib3(i, memo));
+        }
+    }
+
+    int fib3(int n, int[] memo) {
+        if (n <= 0)return 0;
+        else if (n == 1) return 1;
+        else if (memo[n] > 0) return memo[n];
+        memo[n] = fib3(n - 1, memo) + fib3(n - 2, memo);
+        return memo[n];
     }
 
 
