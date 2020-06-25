@@ -120,6 +120,31 @@ public class BigO{
 
 
 
+    // Example 8
+    /*
+    array of string, sorted each string then sort the full array
+    what is the runtime?
+
+    s= longest string
+    a= lenght of array
+
+    sorting each string = O(s*log s)
+    there are "a" string = a*s*log s
+
+    sort all the strings = a* log a  number of comparison
+    each string comparison takes = s    times
+
+    string comparison all = a * s log a
+
+    adding up = O(a*s(log a + log s))
+
+
+
+
+     */
+
+
+
 
 
 
