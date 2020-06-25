@@ -8,5 +8,7 @@ public class Main {
         System.out.println(bigO.pairSumSequence(5));
         System.out.println(bigO.f(4));
 
+        System.out.println(bigO.isPrime(31));
+
     }
 }

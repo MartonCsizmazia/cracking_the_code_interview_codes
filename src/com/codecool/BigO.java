@@ -153,6 +153,21 @@ public class BigO{
         return 0;
     }
 
+    // Example 10
+    //COMPLEXITY: O(square root of N)
+
+    //EXPLANATION: loop stars at 2, ends when i*i = n
+    //in other words, it stops when i = squareRoot(n), and thats the iteration number
+
+    public boolean isPrime(int n){
+        for (int i = 2; i*i <= n ; i++) {
+            if (n % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 
 
