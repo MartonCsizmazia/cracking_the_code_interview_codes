@@ -153,6 +153,9 @@ public class BigO{
         return 0;
     }
 
+
+
+
     // Example 10
     //COMPLEXITY: O(square root of N)
 
@@ -167,6 +170,19 @@ public class BigO{
         }
         return true;
     }
+
+    //Example 11
+    public int factorial(int n){
+        if(n<0){
+            return -1;
+        } else if (n==0){
+            return 1;
+        } else {
+            return n * factorial(n-1);
+        }
+    }
+
+
 
 
 
