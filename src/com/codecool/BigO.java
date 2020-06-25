@@ -68,16 +68,37 @@ public class BigO{
         }
     }
 
+
+
+    //O(ab)
     //COMPLEXITY: O(ab)    -> two different inputs
     // O(n^2) is a VERY COMMON MISTAKE here, the input matters very much
     //explanation on page 48
     public void printUnorderedPairs2(int[] arrayA, int[] arrayB){
-        for (int i = 0; i < arrayA.length; i++) { // 4X
-            for (int j = 0; j < arrayB.length; j++) { // 1: 2X, 2:3X, 3:4X, 4:5X
-                System.out.println(arrayA[i] + "," + arrayB[j]);
+        for (int i = 0; i < arrayA.length; i++) {
+            for (int j = 0; j < arrayB.length; j++) {
+                System.out.println(arrayA[i] + "," + arrayB[j]);//O(1) work
             }
         }
     }
+
+    //Example 5
+    //COMPLEXITY: O(ab) nothing really changed from before
+    public void printUnorderedPairs3(int[] arrayA, int[] arrayB){
+        for (int i = 0; i < arrayA.length; i++) {
+            for (int j = 0; j < arrayB.length; j++) {
+                for (int k = 0; k < 100000; k++) {
+                    System.out.println(arrayA[i] + "," + arrayB[j]);//O(1) work
+                }
+            }
+        }
+    }
+
+
+
+
+
+
 
 
 
