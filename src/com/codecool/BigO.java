@@ -2,6 +2,9 @@ package com.codecool;
 
 import org.w3c.dom.Node;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static java.util.Arrays.binarySearch;
 
 public class BigO{
@@ -437,6 +440,14 @@ public class BigO{
     }
 
 
+    public double[] tribonacci(double[] s, int n) {
+        double[] p = Arrays.copyOf(s, n);
+        for (int i = 3; i < n; i++) {
+            System.out.println("iter");
+            p[i] = p[i-1]+p[i-2]+p[i-3];
+        }
+        return p;
+    }
 
 
 
