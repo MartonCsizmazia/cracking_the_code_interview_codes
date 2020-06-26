@@ -2,6 +2,7 @@ package com.codecool;
 
 import org.w3c.dom.Node;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -450,19 +451,14 @@ public class BigO{
     }
 
 
+    List <String> merge(String[] words, String[] more) {
+        List<String> sentence = new ArrayList<String>();
+        sentence.addAll(Arrays.asList(words));
+        sentence.addAll(Arrays.asList(more));
+        return sentence;
 
 
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
 }
